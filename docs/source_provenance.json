@@ -1,0 +1,20 @@
+{
+  "based_on": "2026-11-07 matched Basic/Dynamic and noise experiment",
+  "original_file_sha256": {
+    "common.py": "3f9bf0cee5feda7a50dcb6556b0573eab48bf19bc806c26392792acd7ed0c02f",
+    "data.py": "f89a657e74e62306b933e96f63458a3d8f10a67e70f685aa90ef932d7e6fcd8e",
+    "models.py": "bc84929ca8fa269c8d41795b695e5ba83742da7b7fd7b93480a7f03b37640937",
+    "noise.py": "60ed0deaab7f7d83cad08686793eff2f6558564a78be74f700b801d1045e2ae7",
+    "train.py": "9c14bc3e80364e414e4fc55c9cd9f87432396a3453caf98f90799d97440131a4",
+    "evaluate.py": "5a70f0f562397aa0488d8428f29cb771f1a8213d4929ebfdf59115614670768f"
+  },
+  "portable_changes": [
+    "Configurable data/run locations",
+    "ZIP-to-cache preparation and integrity checks",
+    "Optional CPU smoke",
+    "Resume source/code safeguards",
+    "Evaluation audit guards",
+    "Colab entry point"
+  ],
+  "formal_server_files_modified": false
+}

@@ -1,0 +1,25 @@
+{
+  "OCT2017": {
+    "file": "OCT2017-cleaned.zip",
+    "sha256": "b9877f24caaa38db25853e468d14394c024b24663e27965a99edbb6bb14a8a79",
+    "counts": {
+      "train": 60663,
+      "val": 20246,
+      "test": 20240
+    }
+  },
+  "NEH": {
+    "file": "NEH-cleaned.zip",
+    "sha256": "cd743f7ef25e0282ff0630369ebbdfcbe6b16c9fc535047deee455db1e48cf25",
+    "counts": {
+      "external_test": 16663
+    }
+  },
+  "OCT-C8": {
+    "file": "OCT-C8-cleaned.zip",
+    "sha256": "2bd1be754e672fd33b31decdcdf0777af9dcd0b0fd3fee3175d60b16f8e19bfe",
+    "counts": {
+      "external_test": 1546
+    }
+  }
+}

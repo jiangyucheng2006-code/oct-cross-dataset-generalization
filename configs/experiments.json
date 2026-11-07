@@ -1,0 +1,43 @@
+{
+  "seeds": [
+    42
+  ],
+  "replication_scope": "User explicitly requests one run per method for now; fixed seed42 is reproducibility only, not a multi-seed study.",
+  "variants": [
+    "basic",
+    "dynamic",
+    "basic_noise",
+    "na_dynamic"
+  ],
+  "design": "Matched 2x2: static/dynamic convolution and absence/presence of the paper noise-aware objective.",
+  "common_recipe": "All four groups use weighted CE with label_smoothing=0.1, the existing source split/cache, identical mild augmentation, AdamW and stopping rules.",
+  "primary_contrasts": [
+    [
+      "basic",
+      "dynamic"
+    ],
+    [
+      "basic",
+      "basic_noise"
+    ],
+    [
+      "dynamic",
+      "na_dynamic"
+    ],
+    [
+      "basic_noise",
+      "na_dynamic"
+    ]
+  ],
+  "noise_settings": {
+    "sigma": 0.06,
+    "beta": 0.12,
+    "N": 4
+  },
+  "hyperparameter_search": false,
+  "selection": "All groups reported; any selected group uses mean source-validation balanced accuracy only.",
+  "historical_comparability": "Earlier dynamic/stats/balance runs used label_smoothing=0.0; display separately, not as matched controls for this batch.",
+  "max_concurrent_training_jobs": 1,
+  "implementation": "Independent reconstruction, not official author code or an exact reproduction of unspecified details.",
+  "data_access": "Only source train updates weights; source val selects checkpoints; all test cohorts use frozen models without adaptation. No new datasets added."
+}

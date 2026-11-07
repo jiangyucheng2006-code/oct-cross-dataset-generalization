@@ -1,0 +1,39 @@
+{
+  "audit_dir": "data/audit",
+  "source_dataset": "OCT2017",
+  "source_splits": [
+    60663,
+    20246,
+    20240
+  ],
+  "class_order": [
+    "CNV",
+    "DME",
+    "DRUSEN",
+    "NORMAL"
+  ],
+  "image_size": 256,
+  "preprocessing": "grayscale; centered black square padding; Lanczos resize; mild training augmentation; per-image z-normalization",
+  "batch_size": 64,
+  "workers": 2,
+  "max_epochs": 100,
+  "patience": 10,
+  "min_delta": 0.0,
+  "peak_lr": 0.001,
+  "min_lr": 1e-06,
+  "warmup_epochs": 5,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "label_smoothing": 0.1,
+  "label_smoothing_provenance": "Paper specifies smoothing but not coefficient; 0.1 is a predeclared reconstruction choice common to all four groups.",
+  "noise_sigma": 0.06,
+  "noise_beta": 0.12,
+  "noise_realizations": 4,
+  "noise_provenance": "JBO Section 2.5.1 final D1/OCT2017 configuration; not tuned on our validation or test data.",
+  "batch_contract": "2x2 static/dynamic x no-noise/noise; common label smoothing 0.1; historical dynamic batch used 0.0 and remains separate.",
+  "checkpoint_metric": "OCT2017 validation balanced accuracy",
+  "precision": "FP32; TF32 disabled; deterministic algorithms",
+  "external_testing": "Once all four predeclared single-seed runs complete and their checkpoint hashes are frozen; no external tuning",
+  "NEH_rule": "discard DME logit, softmax remaining CNV/DRUSEN/NORMAL; also save original four-class probabilities",
+  "OCT_C8_rule": "loader includes CNV/DME/DRUSEN/NORMAL only; master files unchanged"
+}

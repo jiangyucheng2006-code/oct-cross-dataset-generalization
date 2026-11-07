@@ -1,0 +1,19 @@
+{
+  "seeds": [
+    42
+  ],
+  "variants": [
+    "dynamic",
+    "dynamic_stats",
+    "dynamic_balance"
+  ],
+  "hypotheses": {
+    "dynamic": "Paper-based Dynamic CNN reconstruction with K=4 kernels per layer.",
+    "dynamic_stats": "Mean plus standard deviation of feature channels may improve input-dependent kernel selection; may also increase sensitivity to domain statistics.",
+    "dynamic_balance": "A small KL penalty on batch-mean router weights may limit early expert collapse; excessive balancing may prevent useful specialization."
+  },
+  "selection": "Report every predeclared variant. Any winner is selected by mean source validation balanced accuracy, never external scores.",
+  "max_concurrent_training_jobs": 1,
+  "matched_control": "Basic CNN shares the same four blocks and classifier; its implementation is provided but its training is not in this Dynamic CNN batch.",
+  "data_access": "External pixels may be hashed and cached for integrity; external model predictions are produced only after training finishes and checkpoint hashes are frozen."
+}
